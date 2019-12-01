@@ -1,0 +1,49 @@
+body {
+    background-image: url("donatebg.jpg");
+    background-size: 100% 100%;
+    font-family: sans-serif;
+    /*color: #384047;*/
+}
+form {
+    max-width: 30%;
+    margin-left: 32%;
+    margin-top: 10%;
+    padding: 20px 50px;
+    background: #f4f7f8;
+    border-radius: 10px;
+}
+input {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 14px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+}
+button {
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #3ac162;
+    /*border-width: 1px 1px 3px;*/
+    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+h1 {
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    text-align: center;
+    color: #08B80D;
+}
