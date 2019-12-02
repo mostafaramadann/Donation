@@ -1,9 +1,9 @@
 <?php
 class Saver {
+private static $saver = null;
 
     private function __construct()
     {}
-    private static $saver = null;
     public static function GetInstance(){
     if(self::$saver==null)
         return self::$saver=new Saver();
@@ -16,7 +16,7 @@ class Saver {
         require_once("UserModel.php");
     }
     public static function UpdateUserProfile($u,$uname,$pass) {
-        self::Require();
+    self::Require();
     Database::getInstance()::Connect();
     Database::getInstance()::ExecuteStatement("Update Users SET UserName = '"+$uname+"', Password = '"+$pass+"' WHERE User_ID = '"+$u->getID()+"'",1);
     Database::getInstance()::CloseConnection();
@@ -49,6 +49,40 @@ class Saver {
         Database::getInstance()::Connect();
         Database::getInstance()::ExecuteStatement("INSERT INTO DonationHistory(DonationAmount,DonationType,Userid) VALUES ('".$DonationAmount."','".
         $DonationType."','".$u->getID()."')");
+        Database::getInstance()::CloseConnection();
+    }
+    public static function addRecord($tablename,$dataArray,$columnNamesArray)
+    {
+        self::Require();
+        $datastatement="";
+        $columnstatement="";
+        $i=0;
+        while($i<count($columnNamesArray))
+        {
+            $columnstatement.=$columnNamesArray[$i];
+            if($i+1!=count($columnNamesArray))
+            {
+                $columnstatement.=",";
+            }
+            $i++;
+        }
+        $i=0;
+        while($i<count($dataArray))
+        {
+               $datastatement.="'".$dataArray[$i]."'";
+               if($i+1!=count($dataArray))
+               {
+                   $datastatement.=",";
+               }
+                $i++;
+
+
+        }
+//        echo $columnstatement;
+//        echo $datastatement;
+
+        Database::getInstance()::Connect();
+        Database::getInstance()::ExecuteStatement("INSERT INTO ".$tablename."(".$columnstatement.") VALUES (".$datastatement.")" );
         Database::getInstance()::CloseConnection();
     }
 

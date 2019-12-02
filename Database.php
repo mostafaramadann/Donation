@@ -43,13 +43,13 @@ public static function getConnection()
 }
     public static function ExecuteStatement($sstatement) {
         require_once("UserModel.php");
+        echo $sstatement;
         $result = self::$conn->query($sstatement) or die(self::$conn->connect_errno);
-
-                /* fetch associative array */
-//        mysqli_next_result(self::$conn);
-                    while($row= mysqli_fetch_array($result)) {
-                        return $row;
-                    }
+        $rowarray = array();
+        while($row= mysqli_fetch_array($result)) {
+            array_push($rowarray,$row);
+        }
+        return $rowarray;
 
     }
 }

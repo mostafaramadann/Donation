@@ -1,9 +1,8 @@
 <?php
-include ("Header.php");
-echo   "<!DOCTYPE html>
+echo "<!DOCTYPE html>
 <html>
     <head>
-        <title>Logistics View</title>
+        <title>Coordination View</title>
         <meta charset=\"windows-1252\">
         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
         
@@ -72,10 +71,6 @@ echo   "<!DOCTYPE html>
             // add Row
             function addHtmlTableRow()
             {
-                // get the table by id
-                // create a new row and cells
-                // get value from input text
-                // set the values into row cell's
                 if(!checkEmptyInput()){
                 var newRow = table.insertRow(table.length),
                     cell1 = newRow.insertCell(0),
@@ -84,14 +79,16 @@ echo   "<!DOCTYPE html>
                     evnt = document.getElementById(\"evnt\").value,
                     date = document.getElementById(\"date\").value,
                     description = document.getElementById(\"description\").value;
-                    cell1.innerHTML = evnt;
-                    cell2.innerHTML = date;
-                    cell3.innerHTML = description;
-                // call the function to set the event to the new row
-                    selectedRowToInput();
-                }
+            
+                cell1.innerHTML = evnt;
+                cell2.innerHTML = date;
+                cell3.innerHTML = description;
+                
+                selectedRowToInput();
             }
-            // display selected row data into input text
+            }
+            
+            
             function selectedRowToInput()
             {
                 
@@ -110,6 +107,7 @@ echo   "<!DOCTYPE html>
             selectedRowToInput();
             
         </script>
+        
     </body>
 </html>";
 ?>

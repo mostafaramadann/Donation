@@ -1,52 +1,57 @@
 <?php
 class financeModel
 {
-    private $recid;
-    private $asset;
-    private $price;
-    private $qty;
+    private static $recid;
+    private static $asset;
+    private static $price;
+    private static $qty;
 
-    public function getRecid()
+    public static function getRecid()
     {
-        return $this->recid;
+        return self::$recid;
+    }
+    public static function AddRecord($ColumnsArray,$dataArray)
+    {
+        require_once ("Saver.php");
+        Saver::GetInstance()::addRecord("finance",$dataArray,$ColumnsArray);
+    }
+    public static function getRecords()
+    {
+        require_once ("Loader.php");
+        $data=Loader::GetInstance()::LoadTableContentFromDatabase('finance');
+        return $data;
+    }
+    public static function setRecid($recid)
+    {
+        self::$recid = $recid;
     }
 
-
-    public function setRecid($recid)
+    public static function getAsset()
     {
-        $this->recid = $recid;
-    }
-
-
-    public function getAsset()
-    {
-        return $this->asset;
+        return self::$asset;
     }
 
     public function setAsset($asset)
     {
-        $this->asset = $asset;
+        self::$asset = $asset;
     }
-
-
     public function getPrice()
     {
-        return $this->price;
+        return self::$price;
     }
-
     public function setPrice($price)
     {
-        $this->price = $price;
+        self::$price = $price;
     }
 
     public function getQty()
     {
-        return $this->qty;
+        return self::$qty;
     }
 
     public function setQty($qty)
     {
-        $this->qty = $qty;
+        self::$qty = $qty;
     }
 
 }
