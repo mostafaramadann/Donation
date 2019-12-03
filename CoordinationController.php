@@ -1,8 +1,15 @@
 <?php
 require_once("CoordinationModel.php");
 require_once ("CoordinationView.php");
+require_once ("UserModel.php");
+require_once ("HeaderView.php");
 ///check if user logged in and with usertype
  session_start();
+$hview =new HeaderView();
+$um = UserModel::MakeObject();
+if(isset($_SESSION['loggedin']))
+    $um->Retrieveuser(null,null,$_SESSION['id'],2);
+$hview->showView($um->getOtherlinks());
 $coordinationmodel = new CoordinationModel();
 $records=$coordinationmodel->getRecords();
 $cooview = new CoordinationView();

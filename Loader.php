@@ -51,14 +51,12 @@ public static function LoadUserProfileFromDatabase($UserName, $Password,$id,$opt
         $row = Database::getInstance()::ExecuteStatement("Select * from UserType_Links where userType="."'".$usertype."'");
 	$UsertypeLink = $row[0]["links"];
 	$otherlinks =array();
-	$description = array();
-//	array_push($otherlinks,count($row));
 	$i=0;
-	while ($i<sizeof($row))
+	while ($i<count($row))
     {
         $row2 = Database::getInstance()::ExecuteStatement("select linkPath,description from Links where linkID=".$row[$i]['links']);
+        echo $row2[0]['linkPath'];
         array_push($otherlinks,array($row2[0]['linkPath'],$row2[0]['description']));
-//        array_push($description,$row2[0]['description']);
         $i++;
     }
         $row = Database::getInstance()::ExecuteStatement("Select * from Links where linkID="."'".$UsertypeLink."'");

@@ -2,12 +2,16 @@
 require_once("FinanceView.php");
 require_once("FinanceModel.php");
 require_once ("HeaderView.php");
+require_once ("UserModel.php");
 session_start();
 ////////////////////////////Main Calls////////////////////////////////////////////////////////////////
   $hview =new HeaderView();
+  $um = UserModel::MakeObject();
+  if(isset($_SESSION['loggedin']))
+  $um->Retrieveuser(null,null,$_SESSION['id'],2);
   $fview = new financeView();
   $fmodel = new financeModel();
-  $hview->showView(null);
+  $hview->showView($um->getOtherlinks());
   $records=$fmodel->getRecords();
   $fview->showView($records);
 if(isset($_POST['addf']))

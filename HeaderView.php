@@ -39,6 +39,7 @@ class HeaderView implements IView
         echo "<li class='dropdown'><a href="."'".$href."'".">".$text."</a>
                 <div class='dropdown-content'>";
                 $i=0;
+//                error_reporting(0);
                 if(isset($_SESSION['loggedin'])) {
                     while ($i < count($records)) {
                         echo "<a href=" . $records[$i][0] . ">" . $records[$i][1] . "</a>";
