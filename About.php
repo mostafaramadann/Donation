@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include ("Header.php");
+include("HeaderView.php");
 ?>
 
 

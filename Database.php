@@ -42,8 +42,8 @@ public static function getConnection()
     return self::$conn;
 }
     public static function ExecuteStatement($sstatement) {
-        require_once("UserModel.php");
-        echo $sstatement;
+//        require_once("UserModel.php");
+//        echo $sstatement;
         $result = self::$conn->query($sstatement) or die(self::$conn->connect_errno);
         $rowarray = array();
         while($row= mysqli_fetch_array($result)) {

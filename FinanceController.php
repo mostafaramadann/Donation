@@ -1,19 +1,30 @@
 <?php
-require_once("financeView.php");
-require_once ("financeModel.php");
+require_once("FinanceView.php");
+require_once("FinanceModel.php");
+require_once ("HeaderView.php");
+session_start();
 ////////////////////////////Main Calls////////////////////////////////////////////////////////////////
+  $hview =new HeaderView();
   $fview = new financeView();
-  $records=financeModel::getRecords();
-  $fview::showView($records);
-if(isset($_POST['add']))
+  $fmodel = new financeModel();
+  $hview->showView(null);
+  $records=$fmodel->getRecords();
+  $fview->showView($records);
+if(isset($_POST['addf']))
 {
-    verify(1);
-    header("location:financeController.php");
+ $verify = verify(1);
+ if($verify)
+ {
+     $columns=array("Asset","price","qty");
+     $dataArray=array($_POST['asset'],$_POST['price'],$_POST['qty']);
+     $fmodel->AddRecord($dataArray,$columns);
+     header("location:FinanceController.php");
+ }
 }
 ///////////////////////Functions///////////////////////////////////////////////////////////////////////
     function verify($verificationno)
     {
-        require_once ("financeModel.php");
+        require_once("FinanceModel.php");
         if($verificationno==1)
         {
             if($_POST['asset']!=""
@@ -23,9 +34,7 @@ if(isset($_POST['add']))
             && $_POST['qty']!=""
             &&preg_match("#[0-9]+#",$_POST['qty']))
             {
-                $columns=array($_POST['asset'],$_POST['price'],$_POST['qty']);
-                $dataArray=array("Asset","price","qty");
-                financeModel::AddRecord($dataArray,$columns);
+               return true;
             }
         }
 

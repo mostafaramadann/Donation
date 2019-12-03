@@ -1,58 +1,86 @@
 <?php
 class financeModel
 {
-    private static $recid;
-    private static $asset;
-    private static $price;
-    private static $qty;
+    private  $recid;
+    private  $asset;
+    private  $price;
+    private  $qty;
 
-    public static function getRecid()
+    public function __construct()
     {
-        return self::$recid;
+
     }
-    public static function AddRecord($ColumnsArray,$dataArray)
+
+    public function AddRecord($dataArray,$ColumnsArray)
     {
         require_once ("Saver.php");
         Saver::GetInstance()::addRecord("finance",$dataArray,$ColumnsArray);
     }
-    public static function getRecords()
+    public function getRecords()
     {
         require_once ("Loader.php");
         $data=Loader::GetInstance()::LoadTableContentFromDatabase('finance');
+        $recid= array();
+        $asset =array();
+        $price=array();
+        $qty=array();
+        $i=0;
+        while($i<count($data)) {
+            array_push($recid, $data[$i]['recid']);
+            array_push($asset, $data[$i]['Asset']);
+            array_push($price, $data[$i]['price']);
+            array_push($qty, $data[$i]['qty']);
+            $i++;
+        }
+        $this->setRecid($recid);
+        $this->setAsset($asset);
+        $this->setPrice($price);
+        $this->setQty($qty);
         return $data;
     }
-    public static function setRecid($recid)
+
+    public function getRecid()
     {
-        self::$recid = $recid;
+        return $this->recid;
     }
 
-    public static function getAsset()
+    public function setRecid($recid)
     {
-        return self::$asset;
+        $this->recid = $recid;
     }
+
+    public function getAsset()
+    {
+        return $this->asset;
+    }
+
 
     public function setAsset($asset)
     {
-        self::$asset = $asset;
+        $this->asset = $asset;
     }
+
     public function getPrice()
     {
-        return self::$price;
+        return $this->price;
     }
+
     public function setPrice($price)
     {
-        self::$price = $price;
+        $this->price = $price;
     }
 
     public function getQty()
     {
-        return self::$qty;
+        return $this->qty;
     }
+
 
     public function setQty($qty)
     {
-        self::$qty = $qty;
+        $this->qty = $qty;
     }
+
 
 }
 ?>

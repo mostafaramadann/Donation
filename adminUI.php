@@ -1,14 +1,13 @@
 <link rel="stylesheet" href="Home.css"/>
 <?php
 session_start();
-
-include ("Header.php");
+require_once ("HeaderView.php");
+require_once ("UserModel.php");
+$hview=new HeaderView();
+$umodel = UserModel::MakeObject();
+$umodel->Retrieveuser(null,null,$_SESSION['id'],2);
+$hview->showView($umodel->getOtherlinks());
 include ("greetings.php");
-
-//require_once("usercookies.php");
-//require_once ("User.php");
-
-//echo "\nhello admin"
 
 ?>
 

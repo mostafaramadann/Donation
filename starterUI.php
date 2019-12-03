@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-include ("Header.php");
+include("HeaderView.php");
 include ("greetings.php");
 
 //require_once("usercookies.php");

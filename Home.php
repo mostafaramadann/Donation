@@ -1,11 +1,23 @@
 <h1>Welcome</h1>
 <link rel="stylesheet" href="Home.css"/>
 <?php
+/////Home Is Puplic and is not concerned with any User
 session_start();
-include ("Header.php");
-//require_once ("UserModel.php");
-////if($_SESSION["loggedin"] != true){
-////    header("location: login.php");
-////    exit;
-////}
+include("HeaderView.php");
+require_once ("UserModel.php");
+$umodel = UserModel::MakeObject();
+if(isset($_SESSION['loggedin']))
+$umodel->Retrieveuser(null,null,$_SESSION['id'],2);
+$hview = new HeaderView();
+$hview->showView($umodel->getOtherlinks());
+ if (session_status() == PHP_SESSION_NONE)
+            session_start();
+
+
 //?>
+<!--//require_once ("UserModel.php");-->
+<!--////if($_SESSION["loggedin"] != true){-->
+<!--////    header("location: login.php");-->
+<!--////    exit;-->
+<!--////}-->
+<!--/// -->

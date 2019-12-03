@@ -5,14 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7871b0cf-04c5-4b04-baa0-3ccfcf8e865e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HeaderView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/About.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/Register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saver.php" beforeDir="false" afterPath="$PROJECT_DIR$/Saver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/financeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/financeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/financeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/financeModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/financeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/financeView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminUI.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminUI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cashDonateView.php" beforeDir="false" afterPath="$PROJECT_DIR$/DonateView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donateView.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/financeView.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/greetings.php" beforeDir="false" afterPath="$PROJECT_DIR$/greetings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hrView.php" beforeDir="false" afterPath="$PROJECT_DIR$/cashDonate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logisticsView.php" beforeDir="false" afterPath="$PROJECT_DIR$/logisticsView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/starterUI.php" beforeDir="false" afterPath="$PROJECT_DIR$/starterUI.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visaDonateView.php" beforeDir="false" afterPath="$PROJECT_DIR$/visaDonate.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +47,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -90,7 +110,8 @@
       <workItem from="1575033338235" duration="9171000" />
       <workItem from="1575051820598" duration="138000" />
       <workItem from="1575224722374" duration="11636000" />
-      <workItem from="1575284240516" duration="1865000" />
+      <workItem from="1575284240516" duration="2776000" />
+      <workItem from="1575344773341" duration="28904000" />
     </task>
     <servers />
   </component>

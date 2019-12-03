@@ -80,7 +80,6 @@ private static $saver = null;
         }
 //        echo $columnstatement;
 //        echo $datastatement;
-
         Database::getInstance()::Connect();
         Database::getInstance()::ExecuteStatement("INSERT INTO ".$tablename."(".$columnstatement.") VALUES (".$datastatement.")" );
         Database::getInstance()::CloseConnection();

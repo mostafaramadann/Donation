@@ -1,15 +1,17 @@
 <?php
-class financeView
+require_once ("IView.php");
+class financeView implements IView
 {
     public function __construct()
     {
     }
-    public static function showView($records)
+    public  function showView($records)
     {
-        include ("Header.php");
+        include ("greetings.php");
             echo "<html lang=\"en\">
             <body>
-            <!--<link rel=\"stylesheet\" href=\"Home.css\">-->
+            <link rel=\"stylesheet\" href=\"Home.css\">
+            <link rel='stylesheet' href='Table.css'>
             <h1 >Financial Matters</h1>
             <h2 >Table Details About Assests Donated</h2>
             <table  id='table' style=\"width:100%\">

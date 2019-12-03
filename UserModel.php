@@ -14,7 +14,7 @@ class UserModel
     private  $Usertype;
     private  $UsertypeStr;
     private  $UsertypeLinkPath;
-
+    private  $otherlinks = array();
     public static function MakeObject()
     {
         return new UserModel(0,"","","","","","","",0, "", "");
@@ -35,9 +35,18 @@ class UserModel
 	//$this->UsertypeLink = $UsertypeLink;
     }
 
-    public function Retrieveuser($username,$password)
+    public function getOtherlinks(): array
     {
-        $u=Loader::GetInstance()::LoadUserProfileFromDatabase($username,$password);
+        return $this->otherlinks;
+    }
+
+    public function setOtherlinks(array $otherlinks)
+    {
+        $this->otherlinks = $otherlinks;
+    }
+
+    private function Load($u)
+    {
         $this->ID=$u->ID;
         $this->FirstName = $u->FirstName;
         $this->LastName = $u->LastName;
@@ -47,22 +56,19 @@ class UserModel
         $this->Password = $u->Password;
         $this->BankAccountNo = $u->BankAccountNo;
         $this->Usertype=$u->Usertype;
-
-	$this->UsertypeStr = $u->UsertypeStr;
-	$this->UsertypeLinkPath = $u->UsertypeLinkPath;
-//     $this->setID($u->getID());
-//     $this->setFirstName($u->getFirstname());
-//     $this->setEmail($u->getEmail());
-//     $this->setPhoneNumber($u->getPhone());
-//     $this->setUsername($u->getUsername());
-//     $this->setPassword($u->getPassword());
-//     $this->setBankAccountNo($u->getBankAccountNo());
-//     $this->setUsertype($u->getUsertype());
+        $this->UsertypeStr = $u->UsertypeStr;
+        $this->UsertypeLinkPath = $u->UsertypeLinkPath;
+        $this->otherlinks=$u->otherlinks;
+    }
+    public function Retrieveuser($username,$password,$id,$option)
+    {
+        $u=Loader::GetInstance()::LoadUserProfileFromDatabase($username,$password,$id,$option);
+        $this->Load($u);
     }
     public function AddUser()
     {
         Saver::GetInstance()::AddUserProfile($this);
-        $this->Retrieveuser($this->getUsername(),$this->getPassword());
+//        $this->Retrieveuser($this->getUsername(),$this->getPassword(),$this->getID(),1);
     }
     public function getUsertype()
     {

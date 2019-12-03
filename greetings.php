@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
 <?php
+if(session_status()==PHP_SESSION_NONE)
 session_start();
-
+else
 $userTypeName = $_SESSION["UsertypeStr"];
-
 ?>
 
 
