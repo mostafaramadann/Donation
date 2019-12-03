@@ -5,10 +5,10 @@ require_once ("UserModel.php");
 require_once ("HeaderView.php");
 ///check if user logged in and with usertype
  session_start();
-$hview =new HeaderView();
 $um = UserModel::MakeObject();
 if(isset($_SESSION['loggedin']))
     $um->Retrieveuser(null,null,$_SESSION['id'],2);
+$hview =new HeaderView();
 $hview->showView($um->getOtherlinks());
 $coordinationmodel = new CoordinationModel();
 $records=$coordinationmodel->getRecords();

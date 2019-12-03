@@ -11,7 +11,6 @@ class CoordinationView implements IView
         echo "<!DOCTYPE html>
 <html lang='en'>
     <head>";
-    include('HeaderView.php');
         include ('greetings.php');
 
         echo "<title>Coordination View</title>
@@ -55,7 +54,7 @@ class CoordinationView implements IView
                 </form>
             </div>
         </div>
-//        <script type=\"text/javascript\" src=\"Coordinationtablescript.js\"></script>
+        <script type=\"text/javascript\" src=\"Coordinationtablescript.js\"></script>
         
     </body>
 </html>";

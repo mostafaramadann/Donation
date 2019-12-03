@@ -7,9 +7,7 @@
     <list default="true" id="7871b0cf-04c5-4b04-baa0-3ccfcf8e865e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CoordinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HeaderView.php" beforeDir="false" afterPath="$PROJECT_DIR$/HeaderView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationView.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Loader.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,7 +88,7 @@
       <workItem from="1575051820598" duration="138000" />
       <workItem from="1575224722374" duration="11636000" />
       <workItem from="1575284240516" duration="2776000" />
-      <workItem from="1575344773341" duration="30672000" />
+      <workItem from="1575344773341" duration="31161000" />
     </task>
     <servers />
   </component>

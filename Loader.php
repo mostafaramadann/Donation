@@ -55,7 +55,7 @@ public static function LoadUserProfileFromDatabase($UserName, $Password,$id,$opt
 	while ($i<count($row))
     {
         $row2 = Database::getInstance()::ExecuteStatement("select linkPath,description from Links where linkID=".$row[$i]['links']);
-        echo $row2[0]['linkPath'];
+//        echo $row2[0]['linkPath'];
         array_push($otherlinks,array($row2[0]['linkPath'],$row2[0]['description']));
         $i++;
     }
