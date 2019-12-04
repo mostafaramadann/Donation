@@ -22,9 +22,6 @@ class Database {
             echo "Database Connection Successfully.";
 
     }
-    public function Createtable() {
-}
-
     public static function CloseConnection()
     {
         if(self::$conn!=null)
@@ -32,11 +29,6 @@ class Database {
 
 
     }
-    public function Altertable() {
-}
-
-    public function Renametable() {
-}
 public static function getConnection()
 {
     return self::$conn;

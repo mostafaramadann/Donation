@@ -1,10 +1,10 @@
 <?php
 class LogisticsModel
 {
-    private $recid;
-    private $Ordername;
-    private $status;
-    private $OrderDetails;
+    private $recid=array();
+    private $Ordername=array();
+    private $status=array();
+    private $OrderDetails=array();
 
     public function getStatus()
     {

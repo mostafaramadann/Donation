@@ -7,10 +7,11 @@
     <list default="true" id="7871b0cf-04c5-4b04-baa0-3ccfcf8e865e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HRModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HRView.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogisticsView.php" beforeDir="false" afterPath="$PROJECT_DIR$/LogisticsView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinanceModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/FinanceModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogisticsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/LogisticsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cashDonate.php" beforeDir="false" afterPath="$PROJECT_DIR$/cashDonate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visaDonate.php" beforeDir="false" afterPath="$PROJECT_DIR$/visaDonate.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +92,8 @@
       <workItem from="1575224722374" duration="11636000" />
       <workItem from="1575284240516" duration="2776000" />
       <workItem from="1575344773341" duration="31309000" />
-      <workItem from="1575398375221" duration="3828000" />
+      <workItem from="1575398375221" duration="3896000" />
+      <workItem from="1575473829766" duration="12176000" />
     </task>
     <servers />
   </component>

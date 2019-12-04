@@ -16,8 +16,7 @@ session_start();
   $fview->showView($records);
 if(isset($_POST['addf']))
 {
- $verify = verify(1);
- if($verify)
+ if(verify())
  {
      $columns=array("Asset","price","qty");
      $dataArray=array($_POST['asset'],$_POST['price'],$_POST['qty']);
@@ -26,11 +25,9 @@ if(isset($_POST['addf']))
  }
 }
 ///////////////////////Functions///////////////////////////////////////////////////////////////////////
-    function verify($verificationno)
+    function verify()
     {
         require_once("FinanceModel.php");
-        if($verificationno==1)
-        {
             if($_POST['asset']!=""
             && preg_match("#^[^\d\s]+$#",$_POST['asset'])
             && $_POST['price']!=""
@@ -40,7 +37,6 @@ if(isset($_POST['addf']))
             {
                return true;
             }
-        }
 
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////

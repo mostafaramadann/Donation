@@ -1,10 +1,10 @@
 <?php
 class financeModel
 {
-    private  $recid;
-    private  $asset;
-    private  $price;
-    private  $qty;
+    private  $recid=array();
+    private  $asset=array();
+    private  $price=array();
+    private  $qty=array();
 
     public function __construct()
     {
