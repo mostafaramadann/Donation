@@ -39,18 +39,4 @@ if(isset($_POST['addf']))
             }
 
     }
-////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////commented out//////////////////////////////////////
-//    private static $controller=null;
-//    private function __construct()
-//    {
-//
-//    }
-//   function getInstance()
-//    {
-//        if (static::$controller == null) {
-//            self::$controller = new financeController();
-//        }
-//        return self::$controller;
-//    }
 ?>

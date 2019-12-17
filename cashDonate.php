@@ -1,24 +1,17 @@
 <?php
-include("HeaderView.php");
+require_once ("IPay.php");
 class cashDonate implements IPay
 {
     private $amount;
-
-    function pay($amount, $paymentMethod)
+    public $text="Cash";
+    function pay($amount)
     {
-        // TODO: Implement pay() method.
+        $this->amount=$amount;
     }
 
     public function getAmount()
     {
         return $this->amount;
-    }
-
-
-    public function setAmount($amount)
-    {
-        if($amount>0)
-        $this->amount = $amount;
     }
 
 }

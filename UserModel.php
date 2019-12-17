@@ -15,6 +15,7 @@ class UserModel
     private  $UsertypeStr;
     private  $UsertypeLinkPath;
     private  $otherlinks = array();
+    private  $Donatationstrategy;
     public static function MakeObject()
     {
         return new UserModel(0,"","","","","","","",0, "", "");
@@ -59,6 +60,7 @@ class UserModel
         $this->UsertypeStr = $u->UsertypeStr;
         $this->UsertypeLinkPath = $u->UsertypeLinkPath;
         $this->otherlinks=$u->otherlinks;
+       // $this->Donatationstrategy=new cashDonate();
     }
     public function Retrieveuser($username,$password,$id,$option)
     {
@@ -133,6 +135,10 @@ class UserModel
     public function getLastname()
     {
         return $this->LastName;
+    }
+    public function Donate($donationAmount,$donationtype)
+    {
+        Saver::GetInstance()::UpdateUserTransactions($this,(int)$donationAmount,$donationtype);
     }
 
     public  function getFirstname()

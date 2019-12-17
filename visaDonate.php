@@ -1,14 +1,16 @@
 <?php
-include("HeaderView.php");
+require_once ("IPay.php");
 class VisaDonate implements IPay
 {
     private $creditcardno;
     private $CVC;
     private $ExpireMonth;
     private $expireYear;
-    function pay($amount, $paymentMethod)
+    private $amount;
+    public $text="Visa";
+    function pay($amount)
     {
-        // TODO: Implement pay() method.
+        $this->amount=$amount;
     }
 
     public function getCreditcardno()
@@ -30,6 +32,11 @@ class VisaDonate implements IPay
         if(strlen($CVC)==3)
         $this->CVC = $CVC;
     }
+
+    public function getAmount()
+    {
+        return $this->amount;
+    }
     public function getExpireMonth()
     {
         return $this->ExpireMonth;
@@ -39,7 +46,6 @@ class VisaDonate implements IPay
     {
         $this->ExpireMonth = $ExpireMonth;
     }
-
     public function getExpireYear()
     {
         return $this->expireYear;

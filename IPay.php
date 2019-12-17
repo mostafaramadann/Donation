@@ -2,6 +2,6 @@
 
 interface IPay
 {
-      function pay($amount,$paymentMethod);
+      function pay($amount);
 }
 ?>

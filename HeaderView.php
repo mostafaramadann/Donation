@@ -27,7 +27,7 @@ class HeaderView implements IView
         <body>
         <header>
             <ul class=\"navbar\">
-                <li><img style=\"width: 25px; height: 25px;\" src=\"Donate.png\"></li>
+                <li><img style=\"width: 25px; height: 25px;\" src=\"UserDonate.png\"></li>
                 <li><a href=\"Home.php\">Home</a></li>
                 <li><a href=\"About.php\">About</a></li>
                 <li class=\"has-dropdown\"><a href=\"#\">Causes</a></li>
