@@ -1,5 +1,5 @@
 <h1>Welcome</h1>
-<link rel="stylesheet" href="Home.css"/>
+<link rel="stylesheet" href="CSS/Home.css"/>
 <?php
 /////Home Is Puplic and is not concerned with any User
 session_start();
@@ -12,6 +12,5 @@ $hview = new HeaderView();
 $hview->showView($umodel->getOtherlinks());
  if (session_status() == PHP_SESSION_NONE)
             session_start();
-
 
 ?>
