@@ -24,7 +24,7 @@ if(session_status()==PHP_SESSION_NONE)
         if ($_POST['Password'] != '' || $_POST['UserName'] != '') {
             require_once ("UserModel.php");
             $u = UserModel::MakeObject();
-            $u->Retrieveuser($_POST['UserName'], $_POST['Password'],null,1);
+            $u->Retrieveuser($_POST['UserName'], sha1($_POST['Password']),null,1);
             if ($u->getID() != null) {
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $u->getID();

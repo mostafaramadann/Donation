@@ -4,7 +4,42 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7871b0cf-04c5-4b04-baa0-3ccfcf8e865e" name="Default Changelist" comment="" />
+    <list default="true" id="7871b0cf-04c5-4b04-baa0-3ccfcf8e865e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/About.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordinationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/CoordinationView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coordinationtablescript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonateView.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/DonationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/DonationModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/DonationView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HRView.php" beforeDir="false" afterPath="$PROJECT_DIR$/HRView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HeaderView.php" beforeDir="false" afterPath="$PROJECT_DIR$/HeaderView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Loader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.php.save" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saver.php" beforeDir="false" afterPath="$PROJECT_DIR$/Saver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/UserModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserView.php" beforeDir="false" afterPath="$PROJECT_DIR$/UserView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminUI.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorativeCoordination.php" beforeDir="false" afterPath="$PROJECT_DIR$/decorativeCoordination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donatebg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/starterUI.php" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +121,11 @@
       <workItem from="1575344773341" duration="31309000" />
       <workItem from="1575398375221" duration="3896000" />
       <workItem from="1575473829766" duration="12850000" />
-      <workItem from="1576570221373" duration="22165000" />
+      <workItem from="1576570221373" duration="23683000" />
+      <workItem from="1576653636464" duration="206000" />
+      <workItem from="1576686141239" duration="27673000" />
+      <workItem from="1576732079663" duration="1666000" />
+      <workItem from="1576734442523" duration="947000" />
     </task>
     <servers />
   </component>

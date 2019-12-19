@@ -1,17 +1,13 @@
 <?php
-​
 require_once("CoordinationModel.php");
 require_once("decorativeCoordinationClass.php");
-​
 $coorMo = new CoordinationModel();
-​
 $coorMoDec = new CoordinationModelStringDecorator($coorMo);
 writeln($coorMoDec->showString());
-​
 function writeln($line_in) {
     echo $line_in."<br/>";
 }
-​
+
 ?>
 ​
     <html>
@@ -28,7 +24,6 @@ if (isset($_POST['addStr'])) {
     if ($_POST['strVal'] != "") {
         $coorMoDecAdd = new CoordinationModelStringAddDecorator($coorMoDec);
         $coorMoDecAdd->add($_POST['strVal']);
-​
         writeln($coorMoDec->showString());
     }
     else {

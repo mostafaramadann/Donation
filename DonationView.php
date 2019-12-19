@@ -2,10 +2,12 @@
 require_once ("IView.php");
 class DonationView implements IView
 {
-
+private $string;
     function showView($records)
     {
-        echo "<br class=\"container\">
+        echo "
+        <link rel='stylesheet' href='CSS/Register.css'>
+<br class=\"container\">
     <div class=\"price\">
     </br>
     </br>

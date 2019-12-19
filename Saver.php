@@ -15,21 +15,35 @@ private static $saver = null;
         require_once("Database.php");
         require_once("UserModel.php");
     }
-    public static function UpdateUserProfile($u,$uname,$pass) {
+    public static function DeleteRecordFromtable($id,$table)
+    {
+        require_once ("Database.php");
+        Database::getInstance()::Connect();
+        Database::ExecuteStatement("Delete from ".$table." where recid=".$id,false);
+        Database::CloseConnection();
+
+    }
+    public static function UpdateUserProfile($u,$uname,$pass,$notification) {
     self::Require();
     Database::getInstance()::Connect();
-    Database::getInstance()::ExecuteStatement("Update Users SET userName = '".$uname."', password = '".$pass."' WHERE userID ='" .$u->getID()."'");
+    Database::getInstance()::ExecuteStatement("Update Users SET  userName = '".$uname."', password = '".sha1($pass)."' WHERE userID =" .$u->getID(),false);
     Database::getInstance()::CloseConnection();
+}
+public static function updateNotification($id,$notification)
+{
+    Database::getInstance()::Connect();
+    echo "Connected";
+    Database::getInstance()::ExecuteStatement("Update Users SET notification =".$notification." Where UserID =".$id);
+    Database::CloseConnection();
 }
 
     public static  function DeleteUserProfile($id) {
         self::Require();
     Database::getInstance()::Connect();
-    Database::ExecuteStatement("Delete From donationhistory where Userid=".$id);
-    Database::getInstance()::ExecuteStatement("Delete From Users Where userID=".$id);
+    Database::ExecuteStatement("Delete From donationhistory where Userid=".$id,false);
+    Database::getInstance()::ExecuteStatement("Delete From Users Where userID=".$id,false);
     Database::getInstance()::CloseConnection();
 }
-
     public static function AddUserProfile($u) {
         self::Require();
         Database::getInstance()::Connect();
@@ -39,9 +53,9 @@ private static $saver = null;
             $u->getEmail()."','".
             $u->getPhone()."','".
             $u->getUsername()."','".
-            $u->getPassword()."','".
+            sha1($u->getPassword())."','".
             $u->getBankAccountNo()."',".
-            (int)$u->getUsertype().")");
+            (int)$u->getUsertype().")",false);
         Database::getInstance()::CloseConnection();
 }
 
@@ -49,7 +63,7 @@ private static $saver = null;
         self::Require();
         Database::getInstance()::Connect();
         Database::getInstance()::ExecuteStatement("INSERT INTO DonationHistory(DonationAmount,DonationType,Userid) VALUES ('".(int)$DonationAmount."','".
-        $DonationType."','".$u->getID()."')");
+        $DonationType."','".$u->getID()."')",false);
         Database::getInstance()::CloseConnection();
     }
     public static function addRecord($tablename,$dataArray,$columnNamesArray)
@@ -82,7 +96,7 @@ private static $saver = null;
 //        echo $columnstatement;
 //        echo $datastatement;
         Database::getInstance()::Connect();
-        Database::getInstance()::ExecuteStatement("INSERT INTO ".$tablename."(".$columnstatement.") VALUES (".$datastatement.")" );
+        Database::getInstance()::ExecuteStatement("INSERT INTO ".$tablename."(".$columnstatement.") VALUES (".$datastatement.")",false );
         Database::getInstance()::CloseConnection();
     }
 

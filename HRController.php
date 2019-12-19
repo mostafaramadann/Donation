@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("HeaderView.php");
 require_once("UserModel.php");
 require_once("HRModel.php");

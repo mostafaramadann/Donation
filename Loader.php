@@ -18,22 +18,21 @@ public static function LoadTableContentFromDatabase($table)
 {
     require_once ("Database.php");
     Database::getInstance()::Connect();
-    $tabledata=Database::ExecuteStatement("select * from ".$table);
+    $tabledata=Database::ExecuteStatement("select * from ".$table,true);
     Database::CloseConnection();
     return $tabledata;
 }
-
 public static function LoadUserProfileFromDatabase($UserName, $Password,$id,$option) {
         require_once("Database.php");
         require_once("UserModel.php");
         Database::getInstance()::Connect();
         if($option==1) {
             $row = Database::getInstance()::ExecuteStatement("Select * from Users where UserName =" . "'" . $UserName . "'"
-                . "and Password = " . "'" . $Password . "'");
+                . "and Password = " . "'" . $Password . "'",true);
         }
         else
         {
-            $row = Database::getInstance()::ExecuteStatement("Select * from Users where userID =".$id);
+            $row = Database::getInstance()::ExecuteStatement("Select * from Users where userID =".$id,true);
         }
         $ID = $row[0]["userID"];
         $fname = $row[0]["firstName"];
@@ -44,28 +43,30 @@ public static function LoadUserProfileFromDatabase($UserName, $Password,$id,$opt
         $uname = $row[0]["userName"];
         $baccount = $row[0]["bankAccount"];
         $usertype =$row[0]["userType"];
+        $notification=$row[0]["notification"];
 
-        $row = Database::getInstance()::ExecuteStatement("Select * from UserType where userTypeID ="."'".$usertype."'");
+        $row = Database::getInstance()::ExecuteStatement("Select * from UserType where userTypeID ="."'".$usertype."'",true);
 	$userTypeStr = $row[0]["userTypeName"];
 
-        $row = Database::getInstance()::ExecuteStatement("Select * from UserType_Links where userType="."'".$usertype."'");
+        $row = Database::getInstance()::ExecuteStatement("Select * from UserType_Links where userType="."'".$usertype."'",true);
 	$UsertypeLink = $row[0]["links"];
 	$otherlinks =array();
 	$i=0;
 	while ($i<count($row))
     {
-        $row2 = Database::getInstance()::ExecuteStatement("select linkPath,description from Links where linkID=".$row[$i]['links']);
+        $row2 = Database::getInstance()::ExecuteStatement("select linkPath,description from Links where linkID=".$row[$i]['links'],true);
 //        echo $row2[0]['linkPath'];
         array_push($otherlinks,array($row2[0]['linkPath'],$row2[0]['description']));
         $i++;
     }
-        $row = Database::getInstance()::ExecuteStatement("Select * from Links where linkID="."'".$UsertypeLink."'");
+        $row = Database::getInstance()::ExecuteStatement("Select * from Links where linkID="."'".$UsertypeLink."'",true);
 	$UsertypeLinkPath = $row[0]["linkPath"];
 
         $ret = new UserModel($ID,$fname,$LastName,$Email,$Phone,$uname,$password,$baccount,$usertype);
 	    $ret->setUsertypeStr($userTypeStr);
 	    $ret->setUsertypeLinkPath($UsertypeLinkPath);
 	    $ret->setOtherlinks($otherlinks);
+        $ret->setNotification($notification);
         Database::CloseConnection();
         return $ret;
     }

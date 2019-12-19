@@ -1,4 +1,5 @@
 <?php
+require_once ("RegisterView.php");
 session_start();
 require_once ("HeaderView.php");
 $hview = new HeaderView();
@@ -59,6 +60,6 @@ if(isset($_POST['reg']))
         $user = new UserModel(0,$_POST["Firstname"],$_POST["Lastname"],$_POST["Email"],$_POST["Phonenumber"],$_POST["Username"],$_POST["Password"],$_POST["BankAccountno"],2);
         $user->AddUser();
     }
-    $verify?header("location:Login.php"):exit();
+    $verify?header("location:LoginController.php"):exit();
 }
 ?>

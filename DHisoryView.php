@@ -1,17 +1,14 @@
- <?php
- require_once ("IView.php");
-class CoordinationView implements IView
+<?php
+require_once ("IView.php");
+class DHisoryView implements IView
 {
-    public function __construct()
+
+    function showView($records)
     {
 
-    }
-    public function showView($records)
-    {
-        echo "<!DOCTYPE html>
-<html lang='en'>
-    <head>";
-        echo "<title>Coordination View</title>
+       echo "
+       <head>
+        <title>Coordination View</title>
         <meta charset='windows-1252'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <link rel='stylesheet' href='CSS/Table.css'>
@@ -61,8 +58,6 @@ class CoordinationView implements IView
         <script type='text/javascript' src='javascript/Coordinationtablescript.js'></script>
         
     </body>
-</html>";
-
+       ";
     }
 }
-?>

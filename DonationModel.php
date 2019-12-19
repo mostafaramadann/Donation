@@ -1,8 +1,12 @@
 <?php
-class DonationModel
+require_once ("subject.php");
+class DonationModel extends subject
 {
+
+
+    private $Observers = array();
     private $DonationStrategy;
-    private $uid;
+
     public function __construct()
     {
 
@@ -11,28 +15,30 @@ class DonationModel
     {
         return $this->DonationStrategy;
     }
+    public function setDonationStrategy(IPay $DonationStrategy)
+    {
+        if($DonationStrategy!=null) {
+            $this->DonationStrategy = $DonationStrategy;
+        }
+    }
 
-    public function setDonationStrategy($DonationStrategy)
+    public function attach(Observer $observer)
     {
-        if($DonationStrategy!=null)
-        $this->DonationStrategy = $DonationStrategy;
-        $this->updateDonationHistory();
+        array_push($this->Observers,$observer);
     }
-    private function updateDonationHistory()
+
+
+    public function notify()
     {
-        $u = UserModel::MakeObject();
-        $u->Retrieveuser(null,null,$this->uid,2);
-        echo (int)$this->DonationStrategy->getAmount();
-        $u->Donate((int)$this->DonationStrategy->getAmount(),$this->DonationStrategy->text);
+       for($i=0;$i<count($this->Observers);$i++)
+       {
+           $this->Observers[$i]->update($this);
+       }
     }
-    public function getUid()
+    public function notifyWithLastDonor()
     {
-        return $this->uid;
-    }
-    public function setUid($uid)
-    {
-        if($this->uid>=0)
-        $this->uid = $uid;
+      $this->setAmount( $this->DonationStrategy->getAmount);
+        $this->notify();
     }
 }
 ?>

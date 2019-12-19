@@ -1,7 +1,8 @@
 <?php
 require_once ("Loader.php");
 require_once ("Saver.php");
-class UserModel
+require_once ("Observer.php");
+class UserModel implements Observer
 {
     private  $ID;
     private  $FirstName;
@@ -15,7 +16,22 @@ class UserModel
     private  $UsertypeStr;
     private  $UsertypeLinkPath;
     private  $otherlinks = array();
-    private  $Donatationstrategy;
+    private $notification;
+
+    public function getNotification()
+    {
+        return $this->notification;
+    }
+
+    public function setNotification($notification)
+    {
+        $notif=(bool) $notification;
+        echo $notif;
+        if($notification !=null) {
+            $this->notification = $notif;
+            echo $this->notification;
+        }
+    }
     public static function MakeObject()
     {
         return new UserModel(0,"","","","","","","",0, "", "");
@@ -31,9 +47,6 @@ class UserModel
         $this->Password = $password;
         $this->BankAccountNo = $bankAccountNo;
         $this->Usertype=$usertype;
-
-	//$this->UsertypeStr = $UsertypeStr;
-	//$this->UsertypeLink = $UsertypeLink;
     }
 
     public function getOtherlinks(): array
@@ -60,12 +73,13 @@ class UserModel
         $this->UsertypeStr = $u->UsertypeStr;
         $this->UsertypeLinkPath = $u->UsertypeLinkPath;
         $this->otherlinks=$u->otherlinks;
-       // $this->Donatationstrategy=new cashDonate();
+        $this->notification=$u->notification;
     }
     public function Retrieveuser($username,$password,$id,$option)
     {
         $u=Loader::GetInstance()::LoadUserProfileFromDatabase($username,$password,$id,$option);
         $this->Load($u);
+        $_SESSION['notifications']=$this->getNotification();
     }
     public function AddUser()
     {
@@ -101,11 +115,7 @@ class UserModel
 
     public function Deleteuserprofile()
     {
-        Saver::GetInstance()::DeleteUserProfile($this);
-    }
-    public function UpdateUserTransaction($donationamount,$donationtype)
-    {
-        Saver::GetInstance()::UpdateUserTransactions($this,$donationamount,$donationtype);
+        Saver::GetInstance()::DeleteUserProfile($this->getID());
     }
     public  function getBankAccountNo()
     {
@@ -184,7 +194,7 @@ class UserModel
     public function setPassword($password)
     {
         if ($password != '' && !preg_match("(0123456789|123456789|012345678)", $password) && strlen($password) > 7)
-            $this->Password = $password;
+            $this->Password = sha1($password);
     }
 
     public function setID($ID)
@@ -197,6 +207,14 @@ class UserModel
     {
         if ($Username != '')
             $this->Username = $Username;
+    }
+
+    public function update(Subject $subject)
+    {
+        $this->notification=1;
+        echo "Last Donation By ".$subject->getLastDonationby()."</br>";
+        echo "With Amount ".$subject->getAmount();
+       # Saver::GetInstance()::updateNotification($_SESSION['id'],$this->getNotification());
     }
 }
 ?>

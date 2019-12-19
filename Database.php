@@ -33,15 +33,22 @@ public static function getConnection()
 {
     return self::$conn;
 }
-    public static function ExecuteStatement($sstatement) {
+    public static function ExecuteStatement($sstatement,$ret) {
 //        require_once("UserModel.php");
         echo $sstatement;
-        $result = self::$conn->query($sstatement) or die(self::$conn->connect_errno);
-        $rowarray = array();
-        while($row= mysqli_fetch_array($result)) {
-            array_push($rowarray,$row);
+        if($ret)
+        {
+            $result = self::$conn->query($sstatement) or die(self::$conn->connect_errno);
+            $rowarray = array();
+            while ($row = mysqli_fetch_array($result)) {
+                array_push($rowarray, $row);
+            }
+            #var_dump($rowarray);
+            return $rowarray;
         }
-        return $rowarray;
+        else
+
+        return (object)self::$conn->query($sstatement) or die(self::$conn->connect_errno);
 
     }
 }

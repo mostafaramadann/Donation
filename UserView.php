@@ -5,6 +5,7 @@ class UserView implements IView
     public function showView($records)
     {
         echo "
+        <link rel='stylesheet' href='CSS/Register.css'>
         </br>
         </br>
         </br>
@@ -31,7 +32,6 @@ class UserView implements IView
               </form>
               </body>
               </html>";
-
     }
 }
 ?>

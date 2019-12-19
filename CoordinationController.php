@@ -25,6 +25,13 @@ if(isset($_POST["addc"]))
         header("CoordinationController"); //Refresh records
     }
 }
+if(isset($_POST['delc']))
+{
+    if($_POST['recid']!=""&&(int)$_POST['recid']>=0)
+    {
+        Saver::DeleteRecordFromtable($_POST['recid'],"coordination");
+    }
+}
 function verify()
 {
     require_once("FinanceModel.php");

@@ -7,12 +7,11 @@ class HRView
     }
     public function showView($records)
     {
-        include ("greetings.php");
         echo "<html lang=\"en\">
             <body>
-            <link rel=\"stylesheet\" href=\"Home.css\">
-            <link rel='stylesheet' href='Table.css'>
-            <h1 >Humane</h1>
+            <link rel=\"stylesheet\" href=\"CSS/Home.css\">
+            <link rel='stylesheet' href='CSS/Table.css'>
+            <h1 >Human Resources</h1>
             <h2 >Table Details About Current volunteers</h2>
             <table  id='table' style=\"width:100%\">
               <tr>
